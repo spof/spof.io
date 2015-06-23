@@ -37,7 +37,7 @@ Creating composemesos_slave3_1...
 Please have a look at `docker-compose.yml` for the details on the different services, ports etc.
 
 ## Accessing the Services
-So we just spun up a zookeeper, mesos-master, three mesos-slaves, marathon framework and chronos framework. How do we access them? Referencing `docker-compose.yml` we can see the following port definitions:
+We just created containers for zookeeper, mesos-master, three mesos-slaves, marathon framework, and chronos framework. How do we access them? Referencing `docker-compose.yml` we can see the following port definitions:
 
 Service | Address
 --------|-------
@@ -46,11 +46,10 @@ Service | Address
 |Chronos|http://192.168.59.103:4400|
 
 [Mesos](http://mesos.apache.org/) is our brain for the scheduling and placement of tasks around the cluster.
-[Marathon](https://mesosphere.github.io/marathon/) is our way to interact with Mesos through deployment definitions such as `microbot_v1.json`
-[Chronos](http://mesos.github.io/chronos/) is a distributed cron system for scheduling tasks around your cluster.
+[Marathon](https://mesosphere.github.io/marathon/) is our way to interact with Mesos through deployment definitions such as `microbot_v1.json` and [chronos](http://mesos.github.io/chronos/) is a distributed cron system for scheduling tasks around your cluster.
 
 ## Sending Your First Deployment
-We will start by sending our deployment to Marathon using simply a curl command. There is a great CLI tool called [marathonctl](https://github.com/shoenig/marathonctl), but we will simply use curl for this example.
+We will start by sending our deployment to Marathon using a simple curl command. There is also a great CLI tool called [marathonctl](https://github.com/shoenig/marathonctl), but we will simply use curl for this example to better learn what is happening.
 
 From within compose-mesos, we can run:
 
