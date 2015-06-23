@@ -1,0 +1,49 @@
+baseurl = "https://spof.io"
+languageCode = "en-us"
+title = "spof.io"
+disqusShortname = "spof" # Optional, enable Disqus integration
+theme = "hyde-x"
+MetaDataFormat = "toml"
+paginate = 10
+[permalinks]
+    # Optional. Change the permalink format for the 'post' content type.
+    # The format shown here is the same one Jekyll/Octopress uses by default.
+    post = "/blog/:year/:month/:day/:title/"
+
+[author]
+    name = "Patrick O'Connor"
+
+[indexes]
+    # Optional. Use if you want tags and lists.
+    category = "categories"
+
+[params]
+    AuthorName = "Patrick O'Connor"
+    # Used when a given page doesn't set its own.
+    defaultDescription = "Single Point of Failure: A journey about breaking production with zero downtime."
+    defaultKeywords = "single,point,failure,spof"
+
+    # Changes sidebar background and link/accent colours.
+    # See below for more colour options.
+    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
+    theme = "theme-base-0c"
+
+    # Select a syntax highight.
+    # Check the static/css/highlight directory for options.
+    highlight = "solarized_dark"
+
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = "Single Point of Failure: A journey about breaking production with zero downtime."
+
+    # Metadata used to drive integrations.
+    googleAuthorship = "110458657109775299498"
+    googleAnalytics = "UA-62463736-1"
+    gravatarHash = "c5ea9eab67473533826b8693f209c1b1"
+
+    # Sidebar social links, these must be full URLs.
+    github = "https://github.com/dontrebootme"
+    linkedin = "https://www.linkedin.com/in/dontrebootme"
+    googleplus = ""
+    facebook = ""
+    twitter = "https://twitter.com/dontrebootme"
