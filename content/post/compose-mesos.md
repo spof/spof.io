@@ -1,9 +1,9 @@
 +++
 categories = ["walkthrough", "docker", "mesos"]
-description = "Using docker-compose to spin up a local mesos, marathon and chronos cluster."
+description = "Using docker-compose to create a local mesos, marathon and chronos cluster."
 date = "2015-06-23"
 keywords = ["walkthrough", "mesos", "marathon", "docker"]
-title = "Mesos sandbox using Docker Compose"
+title = "Mesos Sandbox Using Docker Compose"
 +++
 
 ## Getting started with Mesos, Marathon and Chronos
