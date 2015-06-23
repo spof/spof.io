@@ -17,7 +17,7 @@ When I first set out to set up my own Mesos, Marathon and Chronos cluster, I tur
 
 
 ## docker-compose up
-Start off by getting yourself setup with [docker-compose](https://docs.docker.com/compose/install/). In my example, I'm using [boot2docker](http://boot2docker.io/) and OS X. Once you're setup with docker-compose, grab a copy of [github.com/dontrebootme/compose-mesos](https://github.com/dontrebootme/compose-mesos)
+Start by installing [docker-compose](https://docs.docker.com/compose/install/). In my example, I'm using [boot2docker](http://boot2docker.io/) and OS X. Once you're setup with docker-compose, grab a copy of [github.com/dontrebootme/compose-mesos](https://github.com/dontrebootme/compose-mesos)
 
     $ git clone https://github.com/dontrebootme/compose-mesos.git
     $ cd compose-mesos
@@ -64,9 +64,9 @@ This is equivalent to:
 $ marathonctl app create microbot_v1.json
 ```
 
-What we've just instructed Marathon to do was to place 10 instances of the `microbot` container with other definitions such as health checks, upgrade strategies etc. Check out `microbot_v1.json` for a full picture of the deployment definition.
+What we've just instructed Marathon to do was place 10 instances of the `microbot` container with other definitions such as health checks, upgrade strategies etc. Check out `microbot_v1.json` for more information about the application.
 
-Now that we've sent the deployment to Marathon, Marathon will reach out to Mesos and begin placement the containers. You can view this by browsing to **http://192.168.59.103:8080/**
+Once Marathon receives the application json it will work with Mesos Master to schedule placement of the containers. You can view this by browsing to **http://192.168.59.103:8080/**
 
 You should see deployment in action similar to:
 {{< img src="/media/compose-mesos-img1.png" title="Marathon Apps" >}}
@@ -75,7 +75,7 @@ You can drill into the app deployment to see all the tasks such as:
 {{< img src="/media/compose-mesos-img2.png" title="Marathon App Tasks" >}}
 
 ## Scaling Up and Down
-Through the Marathon UI, you can scale up or down your number of containers by simply using the `Scale` button. A preferred method would be modifying the deployment json file (such as microbot_v1.json) and change the `instances` parameter. For updates to apps, we dont use an HTTP POST, we instead use a PUT to the app deployment endpoint:
+Through the Marathon UI you can scale the containers by simply using the `Scale` button or from the command like by modifying the deployment json file (microbot_v1.json) and change the `instances` parameter. For updates to apps, we dont use an HTTP POST, we instead use a PUT to the app deployment endpoint:
 
 ```
 $ curl -X PUT -H "Content-Type: application/json" http://192.168.59.103:8080/v2/apps/microbot -d@microbot_v1.json
@@ -89,12 +89,13 @@ $ marathonctl app update microbot microbot_v1.json
 
 If you wanted to update the deployment (including version changes), use `curl -X PUT` or `marathonctl app update`. Try playing with changes to the deployment examples I've provided.
 
-## Cleaning Up
-When you're all done scaling up/down containers and services, go ahead and run:
+## Conclusion
+The examples here can be used to get familiar with Mesos, Marathon, and Chronos. You can use it for desting application deployments, modifications, or exploring the Mesos/Marathon API.
+
+When you're all done scaling up/down containers and services, remove all of the containers with:
 
 ```
 $ ./cleanup
 ```
 
-## Conclusion
-So what we've done is stood a quick cluster for testing out Mesos, Marathon, and Chronos. We can remove all our work with a simple cleanup script at the end. I hope this guide has been useful for getting you started with Mesos and Marathon.
+Leave a comment or send me a tweet [@dontrebootme](http://twitter.com/dontrebootme) if you found this useful.
