@@ -10,10 +10,10 @@ title = "Mesos Sandbox Using Docker Compose"
 When I first set out to set up my own Mesos, Marathon and Chronos cluster, I turned to Docker Compose. Here I'll walkthrough how to use docker-compose to get started with your own local cluster for deployment testing and better understanding of mesos and mesos frameworks. What I'll cover includes:
 
 * docker-compose up
-* accessing the services
-* sending your first deployment
-* scaling up and down
-* cleaning up
+* Accessing the Services
+* Sending Your First Deployment
+* Scaling Up and Down
+* Cleaning Up
 
 
 ## docker-compose up
