@@ -28,7 +28,7 @@ paginate = 10
     truncate = true
 
     # Used when a given page doesn't set its own.
-    defaultDescription = "Single Point of Failure: A journey about breaking production with zero downtime."
+    defaultDescription = "Single Point of Failure."
     defaultKeywords = "single,point,failure,spof"
 
     # Hide estimated reading time for posts.
@@ -46,11 +46,11 @@ paginate = 10
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Single Point of Failure: A journey about breaking production with zero downtime."
+    tagline = "Single Point of Failure."
 
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Blog".
-    home = "Blog"
+    #home = "Blog"
 
     # Metadata used to drive integrations.
     googleAuthorship = "110458657109775299498"
