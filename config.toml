@@ -1,13 +1,14 @@
 baseurl = "https://spof.io"
 title = "spof.io"
 languageCode = "en-us"
-disqusShortname = "spof" # Optional, enable Disqus integration
-MetaDataFormat = "toml"
 theme = "hyde-x"
-paginate = 10
 
-[author]
-    name = "Patrick O'Connor"
+[pagination]
+pagerSize = 10
+
+[services]
+[services.disqus]
+shortname = "spof"
 
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
@@ -22,6 +23,9 @@ paginate = 10
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
+    [params.author]
+        name = "Patrick O'Connor"
+
     # If false display full article contents in blog index.
     # Otherwise show description and 'read on' link to individual blog post page.
     # Default (if omitted) is true.
